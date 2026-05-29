@@ -24,6 +24,10 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+        type: 'asset/resource',
+      },
     ],
   },
   plugins: [
@@ -35,5 +39,6 @@ module.exports = {
     static: './dist',
     open: true,
     port: 8080,
+    watchFiles: ['src/**/*.html'],
   },
 };
